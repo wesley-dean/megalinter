@@ -59,7 +59,7 @@ class MegaLinterRunner {
     }
 
     // Build MegaLinter docker image name with flavor and release version
-    const release = options.release in ["stable"] ? "v5" : options.release;
+    const release = options.release in ["stable"] ? "v6" : options.release;
     const dockerImageName =
       // v4 retrocompatibility >>
       (options.flavor === "all" || options.flavor == null) && this.isv4(release)
@@ -67,9 +67,16 @@ class MegaLinterRunner {
         : options.flavor !== "all" && this.isv4(release)
         ? `nvuillam/mega-linter-${options.flavor}`
         : // << v4 retrocompatibility
-        options.flavor === "all" || options.flavor == null
+        // v5 retrocompatibility >>
+        (options.flavor === "all" || options.flavor == null) &&
+          this.isv5(release)
         ? "megalinter/megalinter"
-        : `megalinter/megalinter-${options.flavor}`;
+        : options.flavor !== "all" && this.isv5(release)
+        ? `megalinter/megalinter-${options.flavor}`
+        : // << v5 retrocompatibility
+        options.flavor === "all" || options.flavor == null
+        ? "oxsecurity/megalinter"
+        : `oxsecurity/megalinter-${options.flavor}`;
     const dockerImage = options.image || `${dockerImageName}:${release}`; // Docker image can be directly sent in options
 
     // Check for docker installation
@@ -114,8 +121,11 @@ ERROR: Docker engine has not been found on your system.
     // Build docker run options
     const lintPath = path.resolve(options.path || ".");
     const commandArgs = ["run"];
-    if (options.containername) {
-      commandArgs.push(...["--name", options.containername]);
+    if (options["removeContainer"]) {
+      commandArgs.push("--rm");
+    }
+    if (options["containerName"]) {
+      commandArgs.push(...["--name", options["containerName"]]);
     }
     commandArgs.push(...["-v", "/var/run/docker.sock:/var/run/docker.sock:rw"]);
     commandArgs.push(...["-v", `${lintPath}:/tmp/lint:rw`]);
@@ -133,17 +143,25 @@ ERROR: Docker engine has not been found on your system.
         commandArgs.push(...["-e", envVarEqualsValue]);
       }
     }
+    // Files only
+    if (options.filesonly === true) {
+      commandArgs.push(...["-e", "SKIP_CLI_LINT_MODES=project"]);
+    }
+    // list of files
+    if ((options._ || []).length > 0) {
+      commandArgs.push(
+        ...["-e"],
+        `MEGALINTER_FILES_TO_LINT=${options._.join(",")}`
+      );
+    }
     commandArgs.push(dockerImage);
 
     // Call docker run
     console.log(`Command: docker ${commandArgs.join(" ")}`);
     const spawnOptions = {
-      detached: false,
-      cwd: process.cwd(),
       env: Object.assign({}, process.env),
       stdio: "inherit",
       windowsHide: true,
-      windowsVerbatimArguments: true,
     };
     const spawnRes = spawnSync("docker", commandArgs, spawnOptions);
     // Output json if requested
@@ -158,11 +176,7 @@ ERROR: Docker engine has not been found on your system.
         console.log(JSON.stringify(JSON.parse(jsonRaw)));
       }
     }
-    return {
-      status: spawnRes.status,
-      stdout: spawnRes.stdout,
-      stderr: spawnRes.stderr,
-    };
+    return spawnRes;
   }
 
   isv4(release) {
@@ -193,6 +207,31 @@ ERROR: Docker engine has not been found on your system.
       );
     }
     return isV4flag;
+  }
+
+  isv5(release) {
+    const isV5flag = release.includes("v5");
+    if (isV5flag) {
+      console.warn(
+        c.bold(
+          "#######################################################################"
+        )
+      );
+      console.warn(
+        c.bold("MEGA-LINTER HAS A NEW V6 VERSION. Please upgrade to it by:")
+      );
+      console.warn(
+        c.bold(
+          "- Running the command at the root of your repo (requires node.js): npx mega-linter-runner --upgrade"
+        )
+      );
+      console.warn(
+        c.bold(
+          "#######################################################################"
+        )
+      );
+    }
+    return isV5flag;
   }
 }
 
