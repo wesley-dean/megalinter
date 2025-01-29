@@ -19,7 +19,7 @@ ARG BASH_SHFMT_VERSION=v3.10.0-alpine
 # renovate: datasource=docker depName=hadolint/hadolint
 ARG DOCKERFILE_HADOLINT_VERSION=v2.12.0-alpine
 # renovate: datasource=docker depName=zricethezav/gitleaks
-ARG REPOSITORY_GITLEAKS_VERSION=v8.23.1
+ARG REPOSITORY_GITLEAKS_VERSION=v8.23.2
 # renovate: datasource=docker depName=trufflesecurity/trufflehog 
 ARG REPOSITORY_TRUFFLEHOG_VERSION=3.88.2
 #ARGTOP__END
@@ -63,7 +63,7 @@ FROM python:3.13.1-alpine3.21
 #############################################################################################
 #ARG__START
 # renovate: datasource=github-tags depName=anchore/grype
-ARG REPOSITORY_GRYPE_VERSION=0.79.5
+ARG REPOSITORY_GRYPE_VERSION=0.87.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
 ARG REPOSITORY_TRIVY_VERSION=0.58.2
 # renovate: datasource=github-tags depName=aquasecurity/trivy

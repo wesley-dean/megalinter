@@ -19,7 +19,7 @@ If your root folder is not **force-app**, please set variable SALESFORCE_LIGHTNI
 
 ## lightning-flow-scanner documentation
 
-- Version in MegaLinter: **2.38.0**
+- Version in MegaLinter: **2.43.0**
 - Visit [Official Web Site](https://github.com/Lightning-Flow-Scanner#readme){target=_blank}
 - See [How to configure lightning-flow-scanner rules](https://github.com/Lightning-Flow-Scanner/lightning-flow-scanner-sfdx#configuration){target=_blank}
   - If custom `.flow-scanner.json` config file isn't found, [.flow-scanner.json](https://github.com/oxsecurity/megalinter/tree/main/TEMPLATES/.flow-scanner.json){target=_blank} will be used
@@ -90,11 +90,13 @@ sf flow:scan
 ### Help content
 
 ```shell
+ ›   Warning: @salesforce/cli update available from 2.72.21 to 2.73.9.
 Find and fix potential bugs in Salesforce flows.
 
 USAGE
   $ sf flow scan [--json] [--flags-dir <value>] [-d <value>] [-c
-    <value>] [-f error|warning|note|never] [-r] [-p <value>] [-u <value>]
+    <value>] [-f error|warning|note|never] [-r] [-p <value>] [--files
+    <value>...] [-u <value>]
 
 FLAGS
   -c, --config=<value>          Path to configuration file
@@ -109,6 +111,7 @@ FLAGS
                                 the command
   -u, --targetusername=<value>  Retrieve the latest metadata from the target
                                 before the scan.
+      --files=<value>...        List of source flows paths to scan
 
 GLOBAL FLAGS
   --flags-dir=<value>  Import flag values from a directory.
@@ -126,7 +129,7 @@ ARG SALESFORCE_CLI_VERSION=2.72.21
 # renovate: datasource=npm depName=@salesforce/plugin-packaging
 ARG SALESFORCE_PLUGIN_PACKAGING_VERSION=2.9.12
 # renovate: datasource=npm depName=sfdx-hardis
-ARG SFDX_HARDIS_VERSION=5.16.2
+ARG SFDX_HARDIS_VERSION=5.16.4
 ENV JAVA_HOME=/usr/lib/jvm/java-21-openjdk
 ENV PATH="$JAVA_HOME/bin:${PATH}"
 RUN sf plugins install @salesforce/plugin-packaging@${SALESFORCE_PLUGIN_PACKAGING_VERSION} \
@@ -136,7 +139,7 @@ RUN sf plugins install @salesforce/plugin-packaging@${SALESFORCE_PLUGIN_PACKAGIN
 ENV SF_AUTOUPDATE_DISABLE=true SF_CLI_DISABLE_AUTOUPDATE=true
 # Linter install
 # renovate: datasource=npm depName=lightning-flow-scanner
-ARG LIGHTNING_FLOW_SCANNER_VERSION=2.38.0
+ARG LIGHTNING_FLOW_SCANNER_VERSION=2.43.0
 RUN echo y|sf plugins install lightning-flow-scanner@${LIGHTNING_FLOW_SCANNER_VERSION} \
     && (npm cache clean --force || true) \
     && rm -rf /root/.npm/_cacache

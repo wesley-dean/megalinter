@@ -20,9 +20,9 @@ ARG BASH_SHFMT_VERSION=v3.10.0-alpine
 # renovate: datasource=docker depName=hadolint/hadolint
 ARG DOCKERFILE_HADOLINT_VERSION=v2.12.0-alpine
 # renovate: datasource=docker depName=mstruebing/editorconfig-checker
-ARG EDITORCONFIG_EDITORCONFIG_CHECKER_VERSION=v3.1.2
+ARG EDITORCONFIG_EDITORCONFIG_CHECKER_VERSION=v3.2.0
 # renovate: datasource=github-tags depName=mgechev/revive
-ARG GO_REVIVE_VERSION=v1.5.1
+ARG GO_REVIVE_VERSION=v1.6.0
 # renovate: datasource=docker depName=ghcr.io/yannh/kubeconform
 ARG KUBERNETES_KUBECONFORM_VERSION=v0.6.7-alpine
 # renovate: datasource=docker depName=yoheimuta/protolint
@@ -30,13 +30,13 @@ ARG PROTOBUF_PROTOLINT_VERSION=0.52.0
 # renovate: datasource=github-tags depName=checkmarx/dustilock
 ARG REPOSITORY_DUSTILOCK_VERSION=1.2.0
 # renovate: datasource=docker depName=zricethezav/gitleaks
-ARG REPOSITORY_GITLEAKS_VERSION=v8.23.1
+ARG REPOSITORY_GITLEAKS_VERSION=v8.23.2
 # renovate: datasource=docker depName=checkmarx/kics
 ARG REPOSITORY_KICS_VERSION=v2.1.3-alpine
 # renovate: datasource=docker depName=trufflesecurity/trufflehog 
 ARG REPOSITORY_TRUFFLEHOG_VERSION=3.88.2
 # renovate: datasource=docker depName=jdkato/vale
-ARG SPELL_VALE_VERSION=v3.9.3
+ARG SPELL_VALE_VERSION=v3.9.4
 # renovate: datasource=docker depName=lycheeverse/lychee
 ARG SPELL_LYCHEE_VERSION=sha-a11d515-alpine
 # renovate: datasource=docker depName=ghcr.io/terraform-linters/tflint
@@ -111,20 +111,20 @@ FROM python:3.13.1-alpine3.21
 #############################################################################################
 #ARG__START
 # renovate: datasource=github-tags depName=PowerShell/PowerShell
-ARG POWERSHELL_VERSION=7.4.6
+ARG POWERSHELL_VERSION=7.5.0
 
 # renovate: datasource=npm depName=@salesforce/cli
-ARG SALESFORCE_CLI_VERSION=2.72.21
+ARG SALESFORCE_CLI_VERSION=2.74.6
 # renovate: datasource=npm depName=@salesforce/plugin-packaging
-ARG SALESFORCE_PLUGIN_PACKAGING_VERSION=2.9.12
+ARG SALESFORCE_PLUGIN_PACKAGING_VERSION=2.9.14
 # renovate: datasource=npm depName=sfdx-hardis
-ARG SFDX_HARDIS_VERSION=5.16.3
+ARG SFDX_HARDIS_VERSION=5.17.1
 # renovate: datasource=github-tags depName=Azure/arm-ttk
 ARG ARM_TTK_VERSION=20240328
 ARG ARM_TTK_NAME='arm-ttk.zip'
 ARG ARM_TTK_DIRECTORY='/opt/microsoft'
 # renovate: datasource=github-tags depName=Azure/bicep
-ARG BICEP_VERSION=0.32.4
+ARG BICEP_VERSION=0.33.13
 ARG BICEP_EXE='bicep'
 ARG BICEP_DIR='/usr/local/bin'
 # renovate: datasource=github-tags depName=clj-kondo/clj-kondo
@@ -135,7 +135,7 @@ ARG CLJ_STYLE_VERSION=0.17.642
 # renovate: datasource=nuget depName=csharpier
 ARG CSHARP_CSHARPIER_VERSION=0.30.6
 # renovate: datasource=nuget depName=roslynator.dotnet.cli
-ARG CSHARP_ROSLYNATOR_VERSION=0.9.3
+ARG CSHARP_ROSLYNATOR_VERSION=0.10.0
 # renovate: datasource=dart-version depName=dart
 ARG DART_VERSION='3.6.1'
 # renovate: datasource=github-tags depName=golangci/golangci-lint
@@ -167,23 +167,23 @@ ARG PERL_PERLCRITIC_VERSION=0.997021
 ARG PSSA_VERSION='1.23.0'
 
 # renovate: datasource=github-tags depName=nxadm/rakudo-pkg
-ARG RAKU_RAKU_VERSION=2024.10
+ARG RAKU_RAKU_VERSION=2024.12
 ARG RAKU_RAKU_ALPINE_VERSION=3.20
 
 # renovate: datasource=nuget depName=Microsoft.CST.DevSkim.CLI
 ARG REPOSITORY_DEVSKIM_VERSION=1.0.51
 # renovate: datasource=github-tags depName=anchore/grype
-ARG REPOSITORY_GRYPE_VERSION=0.79.5
+ARG REPOSITORY_GRYPE_VERSION=0.87.0
 # renovate: datasource=github-tags depName=anchore/syft
-ARG REPOSITORY_SYFT_VERSION=1.18.1
+ARG REPOSITORY_SYFT_VERSION=1.19.0
 # renovate: datasource=github-tags depName=aquasecurity/trivy
 ARG REPOSITORY_TRIVY_VERSION=0.58.2
 # renovate: datasource=github-tags depName=aquasecurity/trivy
 ARG REPOSITORY_TRIVY_SBOM_VERSION=0.58.2
 # renovate: datasource=npm depName=@salesforce/sfdx-scanner
-ARG SALESFORCE_SFDX_SCANNER_VERSION=4.8.0
+ARG SALESFORCE_SFDX_SCANNER_VERSION=4.9.0
 # renovate: datasource=npm depName=lightning-flow-scanner
-ARG LIGHTNING_FLOW_SCANNER_VERSION=2.38.0
+ARG LIGHTNING_FLOW_SCANNER_VERSION=2.43.0
 # renovate: datasource=pypi depName=sqlfluff
 ARG SQL_SQLFLUFF_VERSION=3.3.0
 # renovate: datasource=nuget depName=TSQLLint
