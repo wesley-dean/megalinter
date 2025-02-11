@@ -133,5 +133,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=htmlhint
+ARG NPM_HTMLHINT_VERSION=1.1.4
+```
+
 - NPM packages (node.js):
-  - [htmlhint](https://www.npmjs.com/package/htmlhint)
+  - [htmlhint@${NPM_HTMLHINT_VERSION}](https://www.npmjs.com/package/htmlhint@${NPM_HTMLHINT_VERSION})

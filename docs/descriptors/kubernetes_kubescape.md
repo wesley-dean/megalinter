@@ -126,7 +126,7 @@ Available Commands:
   completion  Generate autocompletion script
   config      Handle cached configurations
   delete      Delete configurations in Kubescape SaaS version
-  download    Download exceptions,control,framework,artifacts,attack-tracks,controls-inputs
+  download    Download controls-inputs,exceptions,control,framework,artifacts,attack-tracks
   fix         Fix misconfiguration in files
   help        Help about any command
   list        List frameworks/controls will list the supported frameworks and controls
@@ -158,5 +158,4 @@ RUN ln -s /lib/libc.so.6 /usr/lib/libresolv.so.2 && \
 - APK packages (Linux):
   - [curl](https://pkgs.alpinelinux.org/packages?branch=edge&name=curl)
   - [gcompat](https://pkgs.alpinelinux.org/packages?branch=edge&name=gcompat)
-  - [libc6-compat](https://pkgs.alpinelinux.org/packages?branch=edge&name=libc6-compat)
   - [libstdc++](https://pkgs.alpinelinux.org/packages?branch=edge&name=libstdc++)

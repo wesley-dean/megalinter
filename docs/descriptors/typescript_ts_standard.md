@@ -124,6 +124,16 @@ Flags (advanced):
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# Parent descriptor install
+# renovate: datasource=npm depName=typescript
+ARG NPM_TYPESCRIPT_VERSION=5.7.3
+# Linter install
+# renovate: datasource=npm depName=ts-standard
+ARG NPM_TS_STANDARD_VERSION=12.0.2
+```
+
 - NPM packages (node.js):
-  - [typescript](https://www.npmjs.com/package/typescript)
-  - [ts-standard](https://www.npmjs.com/package/ts-standard)
+  - [typescript@${NPM_TYPESCRIPT_VERSION}](https://www.npmjs.com/package/typescript@${NPM_TYPESCRIPT_VERSION})
+  - [ts-standard@${NPM_TS_STANDARD_VERSION}](https://www.npmjs.com/package/ts-standard@${NPM_TS_STANDARD_VERSION})

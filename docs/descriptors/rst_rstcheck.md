@@ -146,5 +146,11 @@ rstcheck -c .rstcheck.cfg myfile.rst
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=rstcheck
+ARG PIP_RSTCHECK_VERSION=6.2.4
+```
+
 - PIP packages (Python):
-  - [rstcheck[toml,sphinx]](https://pypi.org/project/rstcheck[toml,sphinx])
+  - [rstcheck[toml,sphinx]==${PIP_RSTCHECK_VERSION}](https://pypi.org/project/rstcheck[toml,sphinx]/${PIP_RSTCHECK_VERSION})

@@ -274,7 +274,15 @@ The following tests were discovered and loaded:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=bandit
+ARG PIP_BANDIT_VERSION=1.8.2
+# renovate: datasource=pypi depName=bandit_sarif_formatter
+ARG PIP_BANDIT_SARIF_FORMATTER_VERSION=1.1.1
+```
+
 - PIP packages (Python):
-  - [bandit](https://pypi.org/project/bandit)
-  - [bandit_sarif_formatter](https://pypi.org/project/bandit_sarif_formatter)
-  - [bandit[toml]](https://pypi.org/project/bandit[toml])
+  - [bandit==${PIP_BANDIT_VERSION}](https://pypi.org/project/bandit/${PIP_BANDIT_VERSION})
+  - [bandit_sarif_formatter==${PIP_BANDIT_SARIF_FORMATTER_VERSION}](https://pypi.org/project/bandit_sarif_formatter/${PIP_BANDIT_SARIF_FORMATTER_VERSION})
+  - [bandit[toml]==${PIP_BANDIT_VERSION}](https://pypi.org/project/bandit[toml]/${PIP_BANDIT_VERSION})

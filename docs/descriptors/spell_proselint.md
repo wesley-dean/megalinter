@@ -124,5 +124,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=proselint
+ARG PIP_PROSELINT_VERSION=0.14.0
+```
+
 - PIP packages (Python):
-  - [proselint](https://pypi.org/project/proselint)
+  - [proselint==${PIP_PROSELINT_VERSION}](https://pypi.org/project/proselint/${PIP_PROSELINT_VERSION})

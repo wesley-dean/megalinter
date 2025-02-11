@@ -15,7 +15,7 @@ description: How to use prettier (configure, ignore files, ignore errors, help &
 
 ## prettier documentation
 
-- Version in MegaLinter: **3.4.2**
+- Version in MegaLinter: **3.5.0**
 - Visit [Official Web Site](https://prettier.io/){target=_blank}
 - See [How to configure prettier rules](https://prettier.io/docs/en/configuration.html){target=_blank}
 - See [How to disable prettier rules in files](https://prettier.io/docs/en/ignore.html#javascript){target=_blank}
@@ -147,6 +147,9 @@ Format options:
   --end-of-line <lf|crlf|cr|auto>
                            Which end of line characters to apply.
                            Defaults to lf.
+  --experimental-operator-position <start|end>
+                           Where to print operators when binary expressions wrap lines.
+                           Defaults to end.
   --no-experimental-ternaries
                            Default behavior of ternaries; keep question marks on the same line as the consequent.
   --html-whitespace-sensitivity <css|strict|ignore>
@@ -154,6 +157,9 @@ Format options:
                            Defaults to css.
   --jsx-single-quote       Use single quotes in JSX.
                            Defaults to false.
+  --object-wrap <preserve|collapse>
+                           How to wrap object literals.
+                           Defaults to preserve.
   --parser <flow|babel|babel-flow|babel-ts|typescript|acorn|espree|meriyah|css|less|scss|json|json5|jsonc|json-stringify|graphql|markdown|mdx|vue|yaml|glimmer|html|angular|lwc>
                            Which parser to use.
   --print-width <int>      The line length where Prettier will try wrap.
@@ -242,5 +248,11 @@ Other options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=prettier
+ARG NPM_PRETTIER_VERSION=3.5.0
+```
+
 - NPM packages (node.js):
-  - [prettier](https://www.npmjs.com/package/prettier)
+  - [prettier@${NPM_PRETTIER_VERSION}](https://www.npmjs.com/package/prettier@${NPM_PRETTIER_VERSION})

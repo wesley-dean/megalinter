@@ -140,5 +140,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=snakefmt
+ARG PIP_SNAKEFMT_VERSION=0.10.2
+```
+
 - PIP packages (Python):
-  - [snakefmt](https://pypi.org/project/snakefmt)
+  - [snakefmt==${PIP_SNAKEFMT_VERSION}](https://pypi.org/project/snakefmt/${PIP_SNAKEFMT_VERSION})

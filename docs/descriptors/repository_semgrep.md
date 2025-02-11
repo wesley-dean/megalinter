@@ -640,5 +640,11 @@ BUGS
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=semgrep
+ARG PIP_SEMGREP_VERSION=1.104.0
+```
+
 - PIP packages (Python):
-  - [semgrep](https://pypi.org/project/semgrep)
+  - [semgrep==${PIP_SEMGREP_VERSION}](https://pypi.org/project/semgrep/${PIP_SEMGREP_VERSION})

@@ -168,9 +168,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
-- APK packages (Linux):
-  - [nodejs](https://pkgs.alpinelinux.org/packages?branch=edge&name=nodejs)
-  - [npm](https://pkgs.alpinelinux.org/packages?branch=edge&name=npm)
-  - [yarn](https://pkgs.alpinelinux.org/packages?branch=edge&name=yarn)
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=jscpd
+ARG NPM_JSCPD_VERSION=4.0.5
+```
+
 - NPM packages (node.js):
-  - [jscpd](https://www.npmjs.com/package/jscpd)
+  - [jscpd@${NPM_JSCPD_VERSION}](https://www.npmjs.com/package/jscpd@${NPM_JSCPD_VERSION})

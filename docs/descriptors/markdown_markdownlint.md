@@ -143,5 +143,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=markdownlint-cli
+ARG NPM_MARKDOWNLINT_CLI_VERSION=0.44.0
+```
+
 - NPM packages (node.js):
-  - [markdownlint-cli](https://www.npmjs.com/package/markdownlint-cli)
+  - [markdownlint-cli@${NPM_MARKDOWNLINT_CLI_VERSION}](https://www.npmjs.com/package/markdownlint-cli@${NPM_MARKDOWNLINT_CLI_VERSION})

@@ -112,8 +112,8 @@ Options:
 - Dockerfile commands :
 ```dockerfile
 # renovate: datasource=npm depName=markdown-link-check
-ARG MARKDOWN_MARKDOWN_LINK_CHECK_VERSION=3.12.2
+ARG NPM_MARKDOWN_LINK_CHECK_VERSION=3.12.2
 ```
 
 - NPM packages (node.js):
-  - [markdown-link-check@${MARKDOWN_MARKDOWN_LINK_CHECK_VERSION}](https://www.npmjs.com/package/markdown-link-check@${MARKDOWN_MARKDOWN_LINK_CHECK_VERSION})
+  - [markdown-link-check@${NPM_MARKDOWN_LINK_CHECK_VERSION}](https://www.npmjs.com/package/markdown-link-check@${NPM_MARKDOWN_LINK_CHECK_VERSION})

@@ -98,5 +98,11 @@ options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=rstfmt
+ARG PIP_RSTFMT_VERSION=0.0.14
+```
+
 - PIP packages (Python):
-  - [rstfmt](https://pypi.org/project/rstfmt)
+  - [rstfmt==${PIP_RSTFMT_VERSION}](https://pypi.org/project/rstfmt/${PIP_RSTFMT_VERSION})

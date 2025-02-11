@@ -92,6 +92,14 @@ options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=Pygments
+ARG PIP_PYGMENTS_VERSION=2.19.1
+# renovate: datasource=pypi depName=restructuredtext_lint
+ARG PIP_RESTRUCTUREDTEXT_LINT_VERSION=1.4.0
+```
+
 - PIP packages (Python):
-  - [Pygments](https://pypi.org/project/Pygments)
-  - [restructuredtext_lint](https://pypi.org/project/restructuredtext_lint)
+  - [Pygments==${PIP_PYGMENTS_VERSION}](https://pypi.org/project/Pygments/${PIP_PYGMENTS_VERSION})
+  - [restructuredtext_lint==${PIP_RESTRUCTUREDTEXT_LINT_VERSION}](https://pypi.org/project/restructuredtext_lint/${PIP_RESTRUCTUREDTEXT_LINT_VERSION})

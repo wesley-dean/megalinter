@@ -130,5 +130,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=@stoplight/spectral-cli
+ARG NPM_SPECTRAL_CLI_VERSION=6.14.2
+```
+
 - NPM packages (node.js):
-  - [@stoplight/spectral-cli](https://www.npmjs.com/package/@stoplight/spectral-cli)
+  - [@stoplight/spectral-cli@${NPM_SPECTRAL_CLI_VERSION}](https://www.npmjs.com/package/@stoplight/spectral-cli/v/${NPM_SPECTRAL_CLI_VERSION})

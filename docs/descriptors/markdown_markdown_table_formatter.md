@@ -112,5 +112,11 @@ markdown-table-formatter [options]
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=markdown-table-formatter
+ARG NPM_MARKDOWN_TABLE_FORMATTER_VERSION=1.6.1
+```
+
 - NPM packages (node.js):
-  - [markdown-table-formatter](https://www.npmjs.com/package/markdown-table-formatter)
+  - [markdown-table-formatter@${NPM_MARKDOWN_TABLE_FORMATTER_VERSION}](https://www.npmjs.com/package/markdown-table-formatter@${NPM_MARKDOWN_TABLE_FORMATTER_VERSION})

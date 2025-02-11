@@ -148,7 +148,17 @@ secretlint --secretlintrc .secretlintrc.json "**/*"
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=secretlint
+ARG NPM_SECRETLINT_VERSION=9.0.0
+# renovate: datasource=npm depName=@secretlint/secretlint-rule-preset-recommend
+ARG NPM_SECRETLINT_SECRETLINT_RULE_PRESET_RECOMMEND_VERSION=9.0.0
+# renovate: datasource=npm depName=@secretlint/secretlint-formatter-sarif
+ARG NPM_SECRETLINT_SECRETLINT_FORMATTER_SARIF_VERSION=9.0.0
+```
+
 - NPM packages (node.js):
-  - [secretlint](https://www.npmjs.com/package/secretlint)
-  - [@secretlint/secretlint-rule-preset-recommend](https://www.npmjs.com/package/@secretlint/secretlint-rule-preset-recommend)
-  - [@secretlint/secretlint-formatter-sarif](https://www.npmjs.com/package/@secretlint/secretlint-formatter-sarif)
+  - [secretlint@${NPM_SECRETLINT_VERSION}](https://www.npmjs.com/package/secretlint@${NPM_SECRETLINT_VERSION})
+  - [@secretlint/secretlint-rule-preset-recommend@${NPM_SECRETLINT_SECRETLINT_RULE_PRESET_RECOMMEND_VERSION}](https://www.npmjs.com/package/@secretlint/secretlint-rule-preset-recommend/v/${NPM_SECRETLINT_SECRETLINT_RULE_PRESET_RECOMMEND_VERSION})
+  - [@secretlint/secretlint-formatter-sarif@${NPM_SECRETLINT_SECRETLINT_FORMATTER_SARIF_VERSION}](https://www.npmjs.com/package/@secretlint/secretlint-formatter-sarif/v/${NPM_SECRETLINT_SECRETLINT_FORMATTER_SARIF_VERSION})
