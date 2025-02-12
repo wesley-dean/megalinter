@@ -31,7 +31,7 @@ ARG REPOSITORY_GITLEAKS_VERSION=v8.23.3
 # renovate: datasource=docker depName=checkmarx/kics
 ARG REPOSITORY_KICS_VERSION=v2.1.3-alpine
 # renovate: datasource=docker depName=trufflesecurity/trufflehog 
-ARG REPOSITORY_TRUFFLEHOG_VERSION=3.88.5
+ARG REPOSITORY_TRUFFLEHOG_VERSION=3.88.6
 # renovate: datasource=docker depName=lycheeverse/lychee
 ARG SPELL_LYCHEE_VERSION=sha-7c4b132-alpine
 # renovate: datasource=docker depName=ghcr.io/terraform-linters/tflint
@@ -75,7 +75,7 @@ FROM alpine/terragrunt:${TERRAFORM_TERRAGRUNT_VERSION} AS terragrunt
 ##################
 # Build wheel for megalinter python package
 ##################
-FROM ghcr.io/astral-sh/uv:0.5.29 AS uv
+FROM ghcr.io/astral-sh/uv:0.5.30 AS uv
 FROM python:3.13.1-alpine3.21 AS build-ml-core
 WORKDIR /
 COPY --from=uv /uv /uvx /bin/
@@ -129,7 +129,7 @@ ARG NPM_STYLELINT_CONFIG_SASS_GUIDELINES_VERSION=12.1.0
 # renovate: datasource=npm depName=stylelint-scss
 ARG NPM_STYLELINT_SCSS_VERSION=6.11.0
 # renovate: datasource=github-tags depName=golangci/golangci-lint
-ARG GO_GOLANGCI_LINT_VERSION=1.63.4
+ARG GO_GOLANGCI_LINT_VERSION=1.64.2
 # renovate: datasource=npm depName=graphql
 ARG NPM_GRAPHQL_VERSION=16.10.0
 # renovate: datasource=npm depName=graphql-schema-linter
@@ -156,7 +156,7 @@ ARG NPM_ESLINT_PLUGIN_IMPORT_VERSION=2.31.0
 # renovate: datasource=npm depName=eslint-plugin-jest
 ARG NPM_ESLINT_PLUGIN_JEST_VERSION=28.11.0
 # renovate: datasource=npm depName=eslint-plugin-n
-ARG NPM_ESLINT_PLUGIN_N_VERSION=16.0.0
+ARG NPM_ESLINT_PLUGIN_N_VERSION=16.6.2
 # renovate: datasource=npm depName=eslint-plugin-prettier
 ARG NPM_ESLINT_PLUGIN_PRETTIER_VERSION=5.2.3
 # renovate: datasource=npm depName=eslint-plugin-promise
@@ -212,7 +212,7 @@ ARG PIP_ISORT_VERSION=6.0.0
 # renovate: datasource=pypi depName=mypy
 ARG PIP_MYPY_VERSION=1.15.0
 # renovate: datasource=npm depName=pyright
-ARG NPM_PYRIGHT_VERSION=1.1.393
+ARG NPM_PYRIGHT_VERSION=1.1.394
 # renovate: datasource=pypi depName=ruff
 ARG PIP_RUFF_VERSION=0.9.6
 # renovate: datasource=pypi depName=checkov
@@ -272,7 +272,7 @@ ARG PIP_YAMLLINT_VERSION=1.35.1
 # renovate: datasource=pypi depName=pip
 ARG PIP_PIP_VERSION=25.0.1
 # renovate: datasource=pypi depName=virtualenv
-ARG PIP_VIRTUALENV_VERSION=20.29.1
+ARG PIP_VIRTUALENV_VERSION=20.29.2
 # renovate: datasource=github-tags depName=rust-lang/rust
 ARG RUST_RUST_VERSION=1.84.1
 

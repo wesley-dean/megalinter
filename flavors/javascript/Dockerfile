@@ -29,7 +29,7 @@ ARG PROTOBUF_PROTOLINT_VERSION=0.53.0
 # renovate: datasource=docker depName=zricethezav/gitleaks
 ARG REPOSITORY_GITLEAKS_VERSION=v8.23.3
 # renovate: datasource=docker depName=trufflesecurity/trufflehog 
-ARG REPOSITORY_TRUFFLEHOG_VERSION=3.88.5
+ARG REPOSITORY_TRUFFLEHOG_VERSION=3.88.6
 # renovate: datasource=docker depName=jdkato/vale
 ARG SPELL_VALE_VERSION=v3.9.4
 # renovate: datasource=docker depName=lycheeverse/lychee
@@ -59,7 +59,7 @@ FROM lycheeverse/lychee:${SPELL_LYCHEE_VERSION} AS lychee
 ##################
 # Build wheel for megalinter python package
 ##################
-FROM ghcr.io/astral-sh/uv:0.5.29 AS uv
+FROM ghcr.io/astral-sh/uv:0.5.30 AS uv
 FROM python:3.13.1-alpine3.21 AS build-ml-core
 WORKDIR /
 COPY --from=uv /uv /uvx /bin/
@@ -130,7 +130,7 @@ ARG NPM_ESLINT_PLUGIN_IMPORT_VERSION=2.31.0
 # renovate: datasource=npm depName=eslint-plugin-jest
 ARG NPM_ESLINT_PLUGIN_JEST_VERSION=28.11.0
 # renovate: datasource=npm depName=eslint-plugin-n
-ARG NPM_ESLINT_PLUGIN_N_VERSION=16.0.0
+ARG NPM_ESLINT_PLUGIN_N_VERSION=16.6.2
 # renovate: datasource=npm depName=eslint-plugin-prettier
 ARG NPM_ESLINT_PLUGIN_PRETTIER_VERSION=5.2.3
 # renovate: datasource=npm depName=eslint-plugin-promise
@@ -214,7 +214,7 @@ ARG PIP_YAMLLINT_VERSION=1.35.1
 # renovate: datasource=pypi depName=pip
 ARG PIP_PIP_VERSION=25.0.1
 # renovate: datasource=pypi depName=virtualenv
-ARG PIP_VIRTUALENV_VERSION=20.29.1
+ARG PIP_VIRTUALENV_VERSION=20.29.2
 # renovate: datasource=github-tags depName=rust-lang/rust
 ARG RUST_RUST_VERSION=1.84.1
 

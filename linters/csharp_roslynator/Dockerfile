@@ -24,7 +24,7 @@
 ##################
 # Build wheel for megalinter python package
 ##################
-FROM ghcr.io/astral-sh/uv:0.5.29 AS uv
+FROM ghcr.io/astral-sh/uv:0.5.30 AS uv
 FROM python:3.13.1-alpine3.21 AS build-ml-core
 WORKDIR /
 COPY --from=uv /uv /uvx /bin/
@@ -49,7 +49,7 @@ FROM python:3.13.1-alpine3.21
 #############################################################################################
 #ARG__START
 # renovate: datasource=nuget depName=roslynator.dotnet.cli
-ARG CSHARP_ROSLYNATOR_VERSION=0.10.0
+ARG CSHARP_ROSLYNATOR_VERSION=0.10.1
 #ARG__END
 
 ####################

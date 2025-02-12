@@ -29,7 +29,7 @@ FROM alpine/terragrunt:${TERRAFORM_TERRAGRUNT_VERSION} AS terragrunt
 ##################
 # Build wheel for megalinter python package
 ##################
-FROM ghcr.io/astral-sh/uv:0.5.29 AS uv
+FROM ghcr.io/astral-sh/uv:0.5.30 AS uv
 FROM python:3.13.1-alpine3.21 AS build-ml-core
 WORKDIR /
 COPY --from=uv /uv /uvx /bin/
@@ -63,7 +63,7 @@ ARG NPM_TYPESCRIPT_VERSION=5.7.3
 # renovate: datasource=nuget depName=csharpier
 ARG CSHARP_CSHARPIER_VERSION=0.30.6
 # renovate: datasource=nuget depName=roslynator.dotnet.cli
-ARG CSHARP_ROSLYNATOR_VERSION=0.10.0
+ARG CSHARP_ROSLYNATOR_VERSION=0.10.1
 # renovate: datasource=npm depName=prettier
 ARG NPM_PRETTIER_VERSION=3.5.0
 # renovate: datasource=npm depName=markdownlint-cli
@@ -86,7 +86,7 @@ ARG PIP_SNAKEFMT_VERSION=0.10.2
 # renovate: datasource=pypi depName=pip
 ARG PIP_PIP_VERSION=25.0.1
 # renovate: datasource=pypi depName=virtualenv
-ARG PIP_VIRTUALENV_VERSION=20.29.1
+ARG PIP_VIRTUALENV_VERSION=20.29.2
 # renovate: datasource=github-tags depName=rust-lang/rust
 ARG RUST_RUST_VERSION=1.84.1
 
