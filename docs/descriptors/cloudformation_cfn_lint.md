@@ -162,5 +162,11 @@ Advanced / Debugging:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=cfn-lint
+ARG PIP_CFN_LINT_VERSION=1.24.0
+```
+
 - PIP packages (Python):
-  - [cfn-lint[sarif]](https://pypi.org/project/cfn-lint[sarif])
+  - [cfn-lint[sarif]==${PIP_CFN_LINT_VERSION}](https://pypi.org/project/cfn-lint[sarif]/${PIP_CFN_LINT_VERSION})

@@ -11,7 +11,7 @@ description: How to use swiftlint (configure, ignore files, ignore errors, help 
 
 - Version in MegaLinter: **0.58.2**
 - Visit [Official Web Site](https://github.com/realm/SwiftLint#readme){target=_blank}
-- Docker image: [ghcr.io/realm/swiftlint:latest](https://hub.docker.com/r/ghcr.io/realm/swiftlint){target=_blank}
+- Docker image: [ghcr.io/realm/swiftlint:SWIFT_SWIFTLINT_VERSION](https://hub.docker.com/r/ghcr.io/realm/swiftlint){target=_blank}
   - arguments: `-v {{WORKSPACE}}:/tmp/lint:rw -w /tmp/lint`
 - See [How to configure swiftlint rules](https://github.com/realm/SwiftLint#configuration){target=_blank}
 - See [How to disable swiftlint rules in files](https://github.com/realm/SwiftLint#disable-rules-in-code){target=_blank}
@@ -28,7 +28,7 @@ description: How to use swiftlint (configure, ignore files, ignore errors, help 
 
 | Variable                                    | Description                                                                                                                                                                                                                                                                           | Default value                                   |
 |---------------------------------------------|---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|-------------------------------------------------|
-| SWIFT_SWIFTLINT_DOCKER_IMAGE_VERSION        | Docker image version                                                                                                                                                                                                                                                                  | `latest`                                        |
+| SWIFT_SWIFTLINT_DOCKER_IMAGE_VERSION        | Docker image version                                                                                                                                                                                                                                                                  | `SWIFT_SWIFTLINT_VERSION`                       |
 | SWIFT_SWIFTLINT_ARGUMENTS                   | User custom arguments to add in linter CLI call<br/>Ex: `-s --foo "bar"`                                                                                                                                                                                                              |                                                 |
 | SWIFT_SWIFTLINT_COMMAND_REMOVE_ARGUMENTS    | User custom arguments to remove from command line before calling the linter<br/>Ex: `-s --foo "bar"`                                                                                                                                                                                  |                                                 |
 | SWIFT_SWIFTLINT_CLI_LINT_MODE               | Override default CLI lint mode<br/>⚠️ As default value is **project**, overriding might not work<br/>- `file`: Calls the linter for each file<br/>- `list_of_files`: Call the linter with the list of files as argument<br/>- `project`: Call the linter from the root of the project | `project`                                       |
@@ -118,4 +118,9 @@ SUBCOMMANDS:
 
 ### Installation on mega-linter Docker image
 
-None
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=docker depName=ghcr.io/realm/swiftlint
+ENV SWIFT_SWIFTLINT_VERSION=0.58.2
+```
+

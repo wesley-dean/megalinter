@@ -147,5 +147,11 @@ Examples:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=@prantlf/jsonlint
+ARG NPM_PRANTLF_JSONLINT_VERSION=16.0.0
+```
+
 - NPM packages (node.js):
-  - [@prantlf/jsonlint](https://www.npmjs.com/package/@prantlf/jsonlint)
+  - [@prantlf/jsonlint@${NPM_PRANTLF_JSONLINT_VERSION}](https://www.npmjs.com/package/@prantlf/jsonlint/v/${NPM_PRANTLF_JSONLINT_VERSION})

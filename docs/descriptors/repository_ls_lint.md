@@ -109,5 +109,11 @@ Usage of /node-deps/node_modules/@ls-lint/ls-lint/bin/ls-lint-linux-amd64:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=@ls-lint/ls-lint
+ARG NPM_LS_LINT_LS_LINT_VERSION=2.2.3
+```
+
 - NPM packages (node.js):
-  - [@ls-lint/ls-lint](https://www.npmjs.com/package/@ls-lint/ls-lint)
+  - [@ls-lint/ls-lint@${NPM_LS_LINT_LS_LINT_VERSION}](https://www.npmjs.com/package/@ls-lint/ls-lint/v/${NPM_LS_LINT_LS_LINT_VERSION})

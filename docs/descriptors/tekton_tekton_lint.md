@@ -111,5 +111,11 @@ Examples:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=@ibm/tekton-lint
+ARG NPM_IBM_TEKTON_LINT_VERSION=1.1.0
+```
+
 - NPM packages (node.js):
-  - [@ibm/tekton-lint](https://www.npmjs.com/package/@ibm/tekton-lint)
+  - [@ibm/tekton-lint@${NPM_IBM_TEKTON_LINT_VERSION}](https://www.npmjs.com/package/@ibm/tekton-lint/v/${NPM_IBM_TEKTON_LINT_VERSION})

@@ -137,5 +137,11 @@ options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=yamllint
+ARG PIP_YAMLLINT_VERSION=1.35.1
+```
+
 - PIP packages (Python):
-  - [yamllint](https://pypi.org/project/yamllint)
+  - [yamllint==${PIP_YAMLLINT_VERSION}](https://pypi.org/project/yamllint/${PIP_YAMLLINT_VERSION})

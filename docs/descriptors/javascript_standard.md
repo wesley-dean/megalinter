@@ -128,5 +128,11 @@ Flags (advanced):
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=standard
+ARG NPM_STANDARD_VERSION=17.1.2
+```
+
 - NPM packages (node.js):
-  - [standard](https://www.npmjs.com/package/standard)
+  - [standard@${NPM_STANDARD_VERSION}](https://www.npmjs.com/package/standard@${NPM_STANDARD_VERSION})

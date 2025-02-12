@@ -300,8 +300,24 @@ stylelint --fix --config .stylelintrc.json myfile.css myfile2.css myfile3.css
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=stylelint
+ARG NPM_STYLELINT_VERSION=16.14.1
+# renovate: datasource=npm depName=stylelint-config-standard
+ARG NPM_STYLELINT_CONFIG_STANDARD_VERSION=37.0.0
+# renovate: datasource=npm depName=stylelint-config-sass-guidelines
+ARG NPM_STYLELINT_CONFIG_SASS_GUIDELINES_VERSION=12.1.0
+# renovate: datasource=npm depName=stylelint-scss
+ARG NPM_STYLELINT_SCSS_VERSION=6.11.0
+# renovate: datasource=pypi depName=cpplint
+ARG PIP_CPPLINT_VERSION=2.0.0
+```
+
 - NPM packages (node.js):
-  - [stylelint](https://www.npmjs.com/package/stylelint)
-  - [stylelint-config-standard](https://www.npmjs.com/package/stylelint-config-standard)
-  - [stylelint-config-sass-guidelines](https://www.npmjs.com/package/stylelint-config-sass-guidelines)
-  - [stylelint-scss](https://www.npmjs.com/package/stylelint-scss)
+  - [stylelint@${NPM_STYLELINT_VERSION}](https://www.npmjs.com/package/stylelint@${NPM_STYLELINT_VERSION})
+  - [stylelint-config-standard@${NPM_STYLELINT_CONFIG_STANDARD_VERSION}](https://www.npmjs.com/package/stylelint-config-standard@${NPM_STYLELINT_CONFIG_STANDARD_VERSION})
+  - [stylelint-config-sass-guidelines@${NPM_STYLELINT_CONFIG_SASS_GUIDELINES_VERSION}](https://www.npmjs.com/package/stylelint-config-sass-guidelines@${NPM_STYLELINT_CONFIG_SASS_GUIDELINES_VERSION})
+  - [stylelint-scss@${NPM_STYLELINT_SCSS_VERSION}](https://www.npmjs.com/package/stylelint-scss@${NPM_STYLELINT_SCSS_VERSION})
+- PIP packages (Python):
+  - [cpplint==${PIP_CPPLINT_VERSION}](https://pypi.org/project/cpplint/${PIP_CPPLINT_VERSION})

@@ -176,5 +176,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=djlint
+ARG PIP_DJLINT_VERSION=1.36.4
+```
+
 - PIP packages (Python):
-  - [djlint](https://pypi.org/project/djlint)
+  - [djlint==${PIP_DJLINT_VERSION}](https://pypi.org/project/djlint/${PIP_DJLINT_VERSION})

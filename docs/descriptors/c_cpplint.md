@@ -300,5 +300,11 @@ Syntax: cpplint.py [--verbose=#] [--output=emacs|eclipse|vs7|junit|sed|gsed]
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=cpplint
+ARG PIP_CPPLINT_VERSION=2.0.0
+```
+
 - PIP packages (Python):
-  - [cpplint](https://pypi.org/project/cpplint)
+  - [cpplint==${PIP_CPPLINT_VERSION}](https://pypi.org/project/cpplint/${PIP_CPPLINT_VERSION})

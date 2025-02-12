@@ -166,5 +166,11 @@ ANSIBLE_LINT_NODEPS: Avoids installing content dependencies and avoids performin
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=ansible-lint
+ARG PIP_ANSIBLE_LINT_VERSION=25.1.2
+```
+
 - PIP packages (Python):
-  - [ansible-lint](https://pypi.org/project/ansible-lint)
+  - [ansible-lint==${PIP_ANSIBLE_LINT_VERSION}](https://pypi.org/project/ansible-lint/${PIP_ANSIBLE_LINT_VERSION})

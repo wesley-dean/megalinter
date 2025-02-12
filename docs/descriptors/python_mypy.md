@@ -405,8 +405,10 @@ Environment variables:
 
 - Dockerfile commands :
 ```dockerfile
+# renovate: datasource=pypi depName=mypy
+ARG PIP_MYPY_VERSION=1.15.0
 ENV MYPY_CACHE_DIR=/tmp
 ```
 
 - PIP packages (Python):
-  - [mypy](https://pypi.org/project/mypy)
+  - [mypy==${PIP_MYPY_VERSION}](https://pypi.org/project/mypy/${PIP_MYPY_VERSION})

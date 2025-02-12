@@ -140,5 +140,11 @@ Examples:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=v8r
+ARG NPM_V8R_VERSION=4.2.1
+```
+
 - NPM packages (node.js):
-  - [v8r](https://www.npmjs.com/package/v8r)
+  - [v8r@${NPM_V8R_VERSION}](https://www.npmjs.com/package/v8r@${NPM_V8R_VERSION})

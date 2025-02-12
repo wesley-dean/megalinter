@@ -198,5 +198,11 @@ Installed plugins: mccabe: 0.7.0, pycodestyle: 2.12.1, pyflakes: 3.2.0
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=flake8
+ARG PIP_FLAKE8_VERSION=7.1.1
+```
+
 - PIP packages (Python):
-  - [flake8](https://pypi.org/project/flake8)
+  - [flake8==${PIP_FLAKE8_VERSION}](https://pypi.org/project/flake8/${PIP_FLAKE8_VERSION})

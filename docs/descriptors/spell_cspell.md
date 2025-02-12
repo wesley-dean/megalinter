@@ -126,5 +126,11 @@ Commands:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=cspell
+ARG NPM_CSPELL_VERSION=8.17.3
+```
+
 - NPM packages (node.js):
-  - [cspell](https://www.npmjs.com/package/cspell)
+  - [cspell@${NPM_CSPELL_VERSION}](https://www.npmjs.com/package/cspell@${NPM_CSPELL_VERSION})

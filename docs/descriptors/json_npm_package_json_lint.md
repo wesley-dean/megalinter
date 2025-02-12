@@ -116,6 +116,14 @@ npmPkgJsonLint --configFile .npmpackagejsonlintrc.json .
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=npm-package-json-lint
+ARG NPM_PACKAGE_JSON_LINT_VERSION=8.0.0
+# renovate: datasource=npm depName=npm-package-json-lint-config-default
+ARG NPM_PACKAGE_JSON_LINT_CONFIG_DEFAULT_VERSION=7.0.1
+```
+
 - NPM packages (node.js):
-  - [npm-package-json-lint](https://www.npmjs.com/package/npm-package-json-lint)
-  - [npm-package-json-lint-config-default](https://www.npmjs.com/package/npm-package-json-lint-config-default)
+  - [npm-package-json-lint@${NPM_PACKAGE_JSON_LINT_VERSION}](https://www.npmjs.com/package/npm-package-json-lint@${NPM_PACKAGE_JSON_LINT_VERSION})
+  - [npm-package-json-lint-config-default@${NPM_PACKAGE_JSON_LINT_CONFIG_DEFAULT_VERSION}](https://www.npmjs.com/package/npm-package-json-lint-config-default@${NPM_PACKAGE_JSON_LINT_CONFIG_DEFAULT_VERSION})

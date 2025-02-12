@@ -105,6 +105,14 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=graphql
+ARG NPM_GRAPHQL_VERSION=16.10.0
+# renovate: datasource=npm depName=graphql-schema-linter
+ARG NPM_GRAPHQL_SCHEMA_LINTER_VERSION=3.0.1
+```
+
 - NPM packages (node.js):
-  - [graphql](https://www.npmjs.com/package/graphql)
-  - [graphql-schema-linter](https://www.npmjs.com/package/graphql-schema-linter)
+  - [graphql@${NPM_GRAPHQL_VERSION}](https://www.npmjs.com/package/graphql@${NPM_GRAPHQL_VERSION})
+  - [graphql-schema-linter@${NPM_GRAPHQL_SCHEMA_LINTER_VERSION}](https://www.npmjs.com/package/graphql-schema-linter@${NPM_GRAPHQL_SCHEMA_LINTER_VERSION})

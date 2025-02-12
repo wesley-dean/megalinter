@@ -242,5 +242,11 @@ Options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=black
+ARG PIP_BLACK_VERSION=25.1.0
+```
+
 - PIP packages (Python):
-  - [black](https://pypi.org/project/black)
+  - [black==${PIP_BLACK_VERSION}](https://pypi.org/project/black/${PIP_BLACK_VERSION})

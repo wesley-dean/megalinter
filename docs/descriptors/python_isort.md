@@ -477,6 +477,14 @@ section output options:
 
 ### Installation on mega-linter Docker image
 
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=pypi depName=black
+ARG PIP_BLACK_VERSION=25.1.0
+# renovate: datasource=pypi depName=isort
+ARG PIP_ISORT_VERSION=6.0.0
+```
+
 - PIP packages (Python):
-  - [isort](https://pypi.org/project/isort)
-  - [black](https://pypi.org/project/black)
+  - [black==${PIP_BLACK_VERSION}](https://pypi.org/project/black/${PIP_BLACK_VERSION})
+  - [isort==${PIP_ISORT_VERSION}](https://pypi.org/project/isort/${PIP_ISORT_VERSION})

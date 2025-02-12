@@ -126,7 +126,11 @@ Usage: pyright [options] files...
 
 ### Installation on mega-linter Docker image
 
-- APK packages (Linux):
-  - [nodejs](https://pkgs.alpinelinux.org/packages?branch=edge&name=nodejs)
-- PIP packages (Python):
-  - [pyright](https://pypi.org/project/pyright)
+- Dockerfile commands :
+```dockerfile
+# renovate: datasource=npm depName=pyright
+ARG NPM_PYRIGHT_VERSION=1.1.393
+```
+
+- NPM packages (node.js):
+  - [pyright@${NPM_PYRIGHT_VERSION}](https://www.npmjs.com/package/pyright@${NPM_PYRIGHT_VERSION})
