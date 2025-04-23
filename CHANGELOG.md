@@ -9,6 +9,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
 Note: Can be used with `oxsecurity/megalinter@beta` in your GitHub Action mega-linter.yml file, or with `oxsecurity/megalinter:beta` docker image
 
 - Core
+  - New config property **ENABLE_ERRORS_LINTERS**. If set, only the listed linters will be considered as blocking
 
 - New linters
 
@@ -86,6 +87,42 @@ Note: Can be used with `oxsecurity/megalinter@beta` in your GitHub Action mega-l
   - [vale](https://vale.sh/) from 3.10.0 to **3.11.1** on 2025-04-04
   - [trufflehog](https://github.com/trufflesecurity/trufflehog) from 3.88.22 to **3.88.23** on 2025-04-06
   - [terragrunt](https://terragrunt.gruntwork.io) from 0.77.1 to **0.77.7** on 2025-04-06
+  - [swiftlint](https://github.com/realm/SwiftLint) from 0.58.2 to **0.59.0** on 2025-04-06
+  - [cpplint](https://github.com/cpplint/cpplint) from 2.0.1 to **2.0.2** on 2025-04-09
+  - [clj-kondo](https://github.com/borkdude/clj-kondo) from 2025.02.20 to **2025.04.07** on 2025-04-09
+  - [vale](https://vale.sh/) from 3.11.1 to **3.11.2** on 2025-04-09
+  - [stylelint](https://stylelint.io) from 16.17.0 to **16.18.0** on 2025-04-09
+  - [checkov](https://www.checkov.io/) from 3.2.394 to **3.2.402** on 2025-04-13
+  - [lightning-flow-scanner](https://github.com/Lightning-Flow-Scanner) from 3.2.0 to **3.2.1** on 2025-04-13
+  - [cfn-lint](https://github.com/aws-cloudformation/cfn-lint) from 1.32.4 to **1.33.2** on 2025-04-14
+  - [pyright](https://github.com/Microsoft/pyright) from 1.1.398 to **1.1.399** on 2025-04-14
+  - [checkov](https://www.checkov.io/) from 3.2.402 to **3.2.404** on 2025-04-14
+  - [secretlint](https://github.com/secretlint/secretlint) from 9.2.0 to **9.3.1** on 2025-04-14
+  - [lightning-flow-scanner](https://github.com/Lightning-Flow-Scanner) from 3.2.1 to **3.4.0** on 2025-04-14
+  - [terraform-fmt](https://developer.hashicorp.com/terraform/cli/commands/fmt) from 1.11.3 to **1.11.4** on 2025-04-14
+  - [terragrunt](https://terragrunt.gruntwork.io) from 0.77.7 to **0.77.14** on 2025-04-14
+  - [dotnet-format](https://docs.microsoft.com/en-us/dotnet/core/tools/dotnet-format) from 9.0.104 to **9.0.105** on 2025-04-14
+  - [ruff-format](https://github.com/astral-sh/ruff) from 0.11.4 to **0.11.5** on 2025-04-14
+  - [ruff](https://github.com/astral-sh/ruff) from 0.11.4 to **0.11.5** on 2025-04-14
+  - [phpcs](https://github.com/PHPCSStandards/PHP_CodeSniffer) from 3.12.1 to **3.12.2** on 2025-04-15
+  - [phplint](https://github.com/overtrue/phplint) from 9.5.6 to **9.6.2** on 2025-04-15
+  - [gitleaks](https://github.com/gitleaks/gitleaks) from 8.24.2 to **8.24.3** on 2025-04-15
+  - [terragrunt](https://terragrunt.gruntwork.io) from 0.77.14 to **0.77.20** on 2025-04-20
+  - [dartanalyzer](https://dart.dev/tools/dart-analyze) from 3.7.2 to **3.7.3** on 2025-04-22
+  - [revive](https://revive.run/) from 1.8.0 to **1.9.0** on 2025-04-22
+  - [kics](https://www.kics.io) from 2.1.6 to **2.1.7** on 2025-04-22
+  - [trivy-sbom](https://aquasecurity.github.io/trivy/) from 0.61.0 to **0.61.1** on 2025-04-22
+  - [trivy](https://aquasecurity.github.io/trivy/) from 0.61.0 to **0.61.1** on 2025-04-22
+  - [phpstan](https://phpstan.org/) from 2.1.11 to **2.1.12** on 2025-04-23
+  - [psalm](https://psalm.dev) from Psalm.6.10.0@ to **Psalm.6.10.1@** on 2025-04-23
+  - [ruff-format](https://github.com/astral-sh/ruff) from 0.11.5 to **0.11.6** on 2025-04-23
+  - [ruff](https://github.com/astral-sh/ruff) from 0.11.5 to **0.11.6** on 2025-04-23
+  - [devskim](https://github.com/microsoft/DevSkim) from 1.0.52 to **1.0.56** on 2025-04-23
+  - [rubocop](https://rubocop.org/) from 1.75.2 to **1.75.3** on 2025-04-23
+  - [swiftlint](https://github.com/realm/SwiftLint) from 0.59.0 to **0.59.1** on 2025-04-23
+  - [pyright](https://github.com/Microsoft/pyright) from 1.1.399 to **1.1.400** on 2025-04-23
+  - [trufflehog](https://github.com/trufflesecurity/trufflehog) from 3.88.23 to **3.88.25** on 2025-04-23
+  - [cspell](https://github.com/streetsidesoftware/cspell/tree/master/packages/cspell) from 8.18.1 to **8.19.2** on 2025-04-23
 <!-- linter-versions-end -->
 
 ## [v8.5.0] - 2024-03-23
